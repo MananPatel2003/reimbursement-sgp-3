@@ -1,0 +1,242 @@
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding:2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color:#333;
+    padding:1rem;
+    margin:2rem 0;
+
+}
+
+.heading span{
+    color:skyblue;
+}
+header{
+    width: 100%;
+    
+    position: fixed;
+    top:0; left:0; right:0;
+    background:#e4dada;
+    padding:2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo{
+    font-size: 3rem;
+    color:#333;
+    font-weight: bolder;
+}
+
+header .logo span{
+    color: pink;
+}
+
+header .navbar a{
+    font-size:  1.9rem;
+    padding:0 1.5rem;
+    color:#666;
+}
+
+header .navbar a:hover{
+    color:skyblue;
+}
+
+header .icons a{
+    font-size: 2 rem;
+    color:#333;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover{
+    color:skyblue;
+}
+
+header #toggler{
+    display: none;
+}
+
+header .fa-bars{
+    font-size: 3rem;
+    color:#fff9f9;
+    border-radius: .5rem;
+    padding:.5rem 1.5rem;
+    cursor: pointer;
+    border:.1rem solid rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.content{
+    height: calc(100% - 100px);
+    width: 100%;
+    background-color:#cdcccc;
+    display: flex;
+    position: relative;
+}
+.left{
+height:100%;
+width:50%;
+
+padding: 10vw 4vw;
+
+}
+.left h1{
+    font-size: 5vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 4.5vw;
+
+    color: aliceblue;
+}
+.left h1 span{
+    color: rgb(26, 255, 0);
+    
+}
+.left p{
+    font-size: 1.5vw;
+   font-weight: 600;
+   color: #666;
+   width: 80%;
+   margin-top: 4vw;
+   margin-bottom: 4vw;
+}
+.right{
+    height: 100%;
+    width: 50%;
+
+
+}
+.masters{
+    width: 100%;
+    height: 100vh;
+
+    background-color: #cdcccc;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.masters container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+.masters h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size: 4vh;  
+    align-items: center;
+    justify-content: center;
+}
+.masters label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 19px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.masters input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 10px;
+}
+
+.masters button {
+    background-color: #f7f7f7;
+    color: #000000;
+    padding: 10px 20px;
+    border: nonne;
+    cursor: pointer;
+
+}
+
+.masters employeeDetails {
+    margin-top: 20px;
+    display: none;
+    
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.Transction{
+    width: 100%;
+    height: 100vh;
+    font-size: 3.5vh;
+    background-color: #cdcccc;
+}
+.label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input[type="text"],
+.input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color:#ceb2b2;
+    color: #fff;
+    padding: 50px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.Reports {
+    width: 100%;
+    height: 100vh;
+    background-color: #cdcccc;
+}
+
+.Reports .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.Reports label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.Reports input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.Reports button {
+    background-color: rgb(255, 255, 254);
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+

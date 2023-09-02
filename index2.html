@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="new3.css">
+
+</head>
+<body>
+    <header>
+
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+    
+        <a href="#" class="logo">mobile reimbursement<span>.</span></a>
+    
+        <nav class="navbar">
+            <a href="#content">Dashboard</a>
+            <a href="#masters">Masters</a>
+            <a href="#Transction">Transction</a>
+            <a href="#Reports">Reports</a>
+        </nav>
+    
+       
+    
+    </header>
+    
+
+        <div class="content" id="content">
+            <div class="left">
+                <h1>
+                    this site clearify  <span>
+                        that
+                    </span>
+                   
+                </h1>
+                <p>
+                    Reimbursement is a financial process where individuals or organizations are compensated for expenses they've incurred. It typically involves submitting receipts or documentation for approval, ensuring expenses align with established policies. Reimbursement is common in employment for work-related costs and in healthcare for medical expenses, among other contexts.
+                </p>
+            </div>
+            <div class="right">
+               <img src="Untitled-removebg-preview.png">
+
+            </div>
+        </div>
+ 
+    <section class="masters" id="masters">
+        <div class="container">
+            <h1>Employee Information</h1>
+            <form method="POST" action="master.php">
+            <label for="employeeNumber">Enter Employee Number:</label>
+            <input type="text" id="employeeNumber" placeholder="Employee Number">
+            <label for="Month">Enter Employee Month :</label>
+            <input type="text" id="Month" placeholder="Month">
+            <label for="Year">Enter Year :</label>
+            <input type="text" id="Year" placeholder="Year">
+            <button onclick="fetchEmployeeDetails()">Get Details</button>
+    
+            <div id="employeeDetails" >
+                <h2>Employee Details</h2>
+                <p><strong>Employee Number:</strong> <span id="empNumber"></span></p>
+                <p><strong>Name:</strong> <span id="empName"></span></p>
+                <p><strong>Mobile Number:</strong> <span id="empMobile"></span></p>
+                <p><strong>Eligible Amount:</strong> <span id="empAmount"></span></p>
+                
+                <!-- Add a download button here for downloading details -->
+                <a href="#" id="downloadLink" download="employee_details.txt">
+                    <button>Download Details</button>
+                </a>
+            </div>
+        </div>
+    
+        <script>
+            function fetchEmployeeDetails() {
+                // In a real application, you would make an API request to fetch employee details here.
+                // For this example, we'll use dummy data.
+    
+                const employeeNumber = document.getElementById("employeeNumber").value;
+                
+                // Dummy data
+                const employeeDetails = {
+                    empNumber: employeeNumber,
+                    empName: "",
+                    empMobile: "",
+                    empAmount: "",
+                    Month: "",
+                    Year: "",
+                };
+    
+                // Display the employee details
+                document.getElementById("empNumber").textContent = employeeDetails.empNumber;
+                document.getElementById("empName").textContent = employeeDetails.empName;
+                document.getElementById("empMobile").textContent = employeeDetails.empMobile;
+                document.getElementById("empAmount").textContent = employeeDetails.empAmount;
+                document.getElementById("empMonth").textContent = employeeDetails.empMonth;
+                document.getElementById("empYear").textContent = employeeDetails.empYear;
+    
+                // Show the employee details section
+                document.getElementById("employeeDetails").style.display = "block";
+    
+                // Create a download link for employee details
+                const downloadLink = document.getElementById("downloadLink");
+                const blob = new Blob([JSON.stringify(employeeDetails)], { type: "text/plain" });
+                downloadLink.href = URL.createObjectURL(blob);
+            }
+        </script>
+    </section>
+    <section class="Transction" id="Transction">
+        <div class="container">
+            <h1>Expense Reimbursement</h1>
+            <form action="transaction.php" method="post" enctype="multipart/form-data">
+                <label for="billMonth">Bill Month:</label>
+                <select id="billMonth" name="billMonth" required>
+                    <option value="Jan">January</option>
+                    <option value="Feb">February</option>
+                    <option value="Mar">March</option>
+                    <option value="Apr">April</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Junw</option>
+                    <option value="Jul">July</option>
+                    <option value="Aug">August</option>
+                    <option value="Sep">September</option>
+                    <option value="Oct">October</option>
+                    <option value="Nov">November</option>
+                    <option value="Dec">December</option>
+                </select><br> 
+    
+                <label for="billYear">Bill Year:</label>
+                <select id="billYear" name="billYear" required>
+                    <option value="23">2023</option>
+                    <option value="22">2022</option>
+                    <option value="21">2021</option>
+                    <option value="21">2021</option>
+                    <option value="20">2020</option>
+                    <option value="19">2019</option>
+                    <option value="18">2018</option>
+                    <option value="17">2017</option>
+                    <option value="16">2016</option>
+                    <option value="15">2015</option>
+                    <option value="14">2014</option>
+                    <option value="13">2013</option>
+                    <option value="12">2012</option>
+                    <option value="11">2011</option>
+                    <option value="10">2010</option>
+                </select><br>
+    
+                <label for="billAmount">Bill Amount:</label>
+                <input type="text" id="billAmount" name="billAmount" placeholder="E.g., 100.00" required><br>
+    
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="text" id="mobileNumber" name="mobileNumber" placeholder="E.g., 123-456-7890" required><br>
+    
+                <label for="billFile">Upload Bill:</label>
+                <input type="file" id="billFile" name="billFile" required><br>
+    
+                <button type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </section>
+    
+    <section class="Reports" id="Reports">
+        <div class="container">
+            <h1>Mobile Reimbursement Report</h1>
+            <form action="generate_report.php" method="post">
+                <label for="fromDate">From Date:</label>
+                <input type="date" id="fromDate" name="fromDate" required>
+    
+                <label for="toDate">To Date:</label>
+                <input type="date" id="toDate" name="toDate" required>
+    
+                <button type="submit">Generate Report</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
